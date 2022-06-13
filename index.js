@@ -340,7 +340,7 @@ module.exports = function (urlString) {
 // extracted by mini-css-extract-plugin
 
     if(true) {
-      // 1655119065874
+      // 1655121165946
       var cssReload = __webpack_require__(779)(module.id, {"locals":false});
       module.hot.dispose(cssReload);
       module.hot.accept(undefined, cssReload);
@@ -700,12 +700,12 @@ handleCategorySelect();
 /******/ 	
 /******/ 	/* webpack/runtime/get update manifest filename */
 /******/ 	!function() {
-/******/ 		__webpack_require__.hmrF = function() { return "main." + __webpack_require__.h() + ".hot-update.json"; };
+/******/ 		__webpack_require__.hmrF = function() { return "index." + __webpack_require__.h() + ".hot-update.json"; };
 /******/ 	}();
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	!function() {
-/******/ 		__webpack_require__.h = function() { return "98a3d307aff09538a003"; }
+/******/ 		__webpack_require__.h = function() { return "bc0f17e08b05e066ecad"; }
 /******/ 	}();
 /******/ 	
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
@@ -1253,7 +1253,7 @@ handleCategorySelect();
 /******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
 /******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
 /******/ 		var installedChunks = __webpack_require__.hmrS_jsonp = __webpack_require__.hmrS_jsonp || {
-/******/ 			179: 0
+/******/ 			826: 0
 /******/ 		};
 /******/ 		
 /******/ 		// no chunk on demand loading

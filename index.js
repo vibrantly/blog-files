@@ -2,292 +2,6 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 586:
-/***/ (function(__unused_webpack_module, __unused_webpack___webpack_exports__, __webpack_require__) {
-
-/* harmony import */ var _styles_style_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(775);
-
-
-function handleToggleNav() {
-  var menuIcon = document.querySelector('.header-nav-icon');
-  var headerNav = document.querySelector('.header-nav');
-  var headerContainer = document.querySelector('.header__container');
-  var select = document.querySelector('.language-select');
-  var headerLogo = document.querySelector('.header__logo');
-  var liLang = document.querySelector('.menu-item--lang');
-  var body = document.querySelector('body');
-  menuIcon.addEventListener('click', function () {
-    headerNav.classList.toggle('header-nav-active');
-    headerContainer.classList.toggle('header-nav-active');
-    menuIcon.classList.toggle('menu-close');
-    headerNav.className === 'header-nav header-nav-active' ? (headerLogo.appendChild(select), body.style.overflow = 'hidden') : (liLang.appendChild(select), body.style.overflow = 'scroll');
-  });
-}
-
-function handleIncreaseInput() {
-  var inputItem = document.getElementById('search-input');
-  var buttons = document.querySelector('.categories-section__items-buttons');
-  inputItem.addEventListener('focus', function (event) {
-    inputItem.classList.add('active');
-    buttons.style.display = 'none';
-  });
-  inputItem.addEventListener('blur', function (event) {
-    if (!inputItem.value.length) {
-      inputItem.classList.remove('active');
-      buttons.style.display = 'flex';
-    }
-  });
-}
-
-function handleCategorySelect() {
-  var selectSingle = document.querySelector('.category-select');
-  var selectSingle_title = selectSingle.querySelector('.category-select__title');
-  var selectSingle_labels = selectSingle.querySelectorAll('.category-select__label');
-  selectSingle_title.addEventListener('click', function () {
-    if ('active' === selectSingle.getAttribute('data-state')) {
-      selectSingle.setAttribute('data-state', '');
-    } else {
-      selectSingle.setAttribute('data-state', 'active');
-    }
-  });
-
-  for (var i = 0; i < selectSingle_labels.length; i++) {
-    selectSingle_labels[i].addEventListener('click', function (evt) {
-      selectSingle_title.textContent = evt.target.textContent;
-      selectSingle.setAttribute('data-state', '');
-    });
-  }
-}
-
-;
-(function ($) {
-  $('.language-select').click(function () {
-    $(this).toggleClass('open');
-    var li = document.querySelectorAll('.option');
-    var arr = Array.from(li);
-
-    for (var i = 0; i < arr.length; i += 1) {
-      var es = document.querySelector('[data-lang="es"]');
-      var en = document.querySelector('[data-lang="en"]');
-
-      if (arr[i].dataset.lang === 'da' && arr[i].className === 'active option lang--da') {
-        es.classList.add('option-1');
-        en.classList.add('option-2');
-      }
-    }
-  });
-  $('.language-select li').click(function () {
-    var setLang = $('.language-select').data('location'),
-        dataLangSelect = $(this).data('lang');
-    $('.language-select').data('location', dataLangSelect);
-    $('.language-select li').removeClass('active');
-    $(this).toggleClass('active');
-    var li = document.querySelectorAll('.option');
-    var arr = Array.from(li);
-
-    for (var i = 0; i < arr.length; i += 1) {
-      var da = document.querySelector('[data-lang="da"]');
-      var es = document.querySelector('[data-lang="es"]');
-      var en = document.querySelector('[data-lang="en"]');
-
-      if (arr[i].dataset.lang === 'da' && arr[i].className === 'option lang--da option-1 active') {
-        es.classList.remove('option-2');
-        es.classList.add('option-1');
-        en.classList.add('option-2');
-      }
-
-      if (arr[i].dataset.lang === 'es' && arr[i].className === 'option lang--es option-1 active') {
-        da.classList.add('option-1');
-        en.classList.add('option-2');
-      }
-
-      if (arr[i].dataset.lang === 'en' && arr[i].className === 'option lang--en option-2 active') {
-        da.classList.add('option-1');
-        es.classList.remove('option-1');
-        es.classList.add('option-2');
-      }
-    }
-  });
-})(jQuery)(function ($) {
-  $("a[href='#top']").click(function () {
-    $('html, body').animate({
-      scrollTop: 0
-    }, 'slow');
-    return false;
-  });
-})(jQuery);
-
-function showSlider() {
-  var slider = document.querySelector('.slider'),
-      sliderList = slider.querySelector('.slider-list'),
-      sliderTrack = slider.querySelector('.slider-track'),
-      slides = slider.querySelectorAll('.slide'),
-      arrows = slider.querySelector('.slider-arrows'),
-      prev = arrows.children[0],
-      next = arrows.children[1],
-      slideWidth = slides[0].offsetWidth,
-      slideIndex = 0,
-      posInit = 0,
-      posX1 = 0,
-      posX2 = 0,
-      posY1 = 0,
-      posY2 = 0,
-      posFinal = 0,
-      isSwipe = false,
-      isScroll = false,
-      allowSwipe = true,
-      transition = true,
-      nextTrf = 0,
-      prevTrf = 0,
-      posThreshold = slides[0].offsetWidth * 0.35,
-      trfRegExp = /([-\d.]+(?=px))/,
-      swipeStartTime,
-      swipeEndTime,
-      getEvent = function getEvent() {
-    return event.type.search('touch') !== -1 ? event.touches[0] : event;
-  },
-      slide = function slide() {
-    if (transition) {
-      sliderTrack.style.transition = 'transform .5s';
-    }
-
-    sliderTrack.style.transform = "translate3d(-".concat(slideIndex * slideWidth, "px, 0px, 0px)");
-    prev.classList.toggle('disabled', slideIndex === 0);
-    next.classList.toggle('disabled', slideIndex === --slides.length);
-  },
-      swipeStart = function swipeStart() {
-    var evt = getEvent();
-
-    if (allowSwipe) {
-      swipeStartTime = Date.now();
-      transition = true;
-      nextTrf = (slideIndex + 1) * -slideWidth;
-      prevTrf = (slideIndex - 1) * -slideWidth;
-      posInit = posX1 = evt.clientX;
-      posY1 = evt.clientY;
-      sliderTrack.style.transition = '';
-      document.addEventListener('touchmove', swipeAction);
-      document.addEventListener('mousemove', swipeAction);
-      document.addEventListener('touchend', swipeEnd);
-      document.addEventListener('mouseup', swipeEnd);
-      sliderList.classList.remove('grab');
-      sliderList.classList.add('grabbing');
-    }
-  },
-      swipeAction = function swipeAction() {
-    var evt = getEvent(),
-        style = sliderTrack.style.transform,
-        transform = +style.match(trfRegExp)[0];
-    posX2 = posX1 - evt.clientX;
-    posX1 = evt.clientX;
-    posY2 = posY1 - evt.clientY;
-    posY1 = evt.clientY;
-
-    if (!isSwipe && !isScroll) {
-      var posY = Math.abs(posY2);
-
-      if (posY > 7 || posX2 === 0) {
-        isScroll = true;
-        allowSwipe = false;
-      } else if (posY < 7) {
-        isSwipe = true;
-      }
-    }
-
-    if (isSwipe) {
-      if (slideIndex === 0) {
-        if (posInit < posX1) {
-          setTransform(transform, 0);
-          return;
-        } else {
-          allowSwipe = true;
-        }
-      }
-
-      if (posInit > posX1 && transform < nextTrf || posInit < posX1 && transform > prevTrf) {
-        reachEdge();
-        return;
-      }
-
-      sliderTrack.style.transform = "translate3d(".concat(transform - posX2, "px, 0px, 0px)");
-    }
-  },
-      swipeEnd = function swipeEnd() {
-    posFinal = posInit - posX1;
-    isScroll = false;
-    isSwipe = false;
-    document.removeEventListener('touchmove', swipeAction);
-    document.removeEventListener('mousemove', swipeAction);
-    document.removeEventListener('touchend', swipeEnd);
-    document.removeEventListener('mouseup', swipeEnd);
-    sliderList.classList.add('grab');
-    sliderList.classList.remove('grabbing');
-
-    if (allowSwipe) {
-      swipeEndTime = Date.now();
-
-      if (Math.abs(posFinal) > posThreshold || swipeEndTime - swipeStartTime < 300) {
-        if (posInit < posX1) {
-          slideIndex--;
-        } else if (posInit > posX1) {
-          slideIndex++;
-        }
-      }
-
-      if (posInit !== posX1) {
-        allowSwipe = false;
-        slide();
-      } else {
-        allowSwipe = true;
-      }
-    } else {
-      allowSwipe = true;
-    }
-  },
-      setTransform = function setTransform(transform, comapreTransform) {
-    if (transform >= comapreTransform) {
-      if (transform > comapreTransform) {
-        sliderTrack.style.transform = "translate3d(".concat(comapreTransform, "px, 0px, 0px)");
-      }
-    }
-
-    allowSwipe = false;
-  },
-      reachEdge = function reachEdge() {
-    transition = false;
-    swipeEnd();
-    allowSwipe = true;
-  };
-
-  sliderTrack.style.transform = 'translate3d(0px, 0px, 0px)';
-  sliderList.classList.add('grab');
-  sliderTrack.addEventListener('transitionend', function () {
-    return allowSwipe = true;
-  });
-  slider.addEventListener('touchstart', swipeStart);
-  slider.addEventListener('mousedown', swipeStart);
-  arrows.addEventListener('click', function () {
-    var target = event.target;
-
-    if (target.classList.contains('next')) {
-      slideIndex++;
-    } else if (target.classList.contains('prev')) {
-      slideIndex--;
-    } else {
-      return;
-    }
-
-    slide();
-  });
-}
-
-showSlider();
-handleToggleNav();
-handleIncreaseInput();
-handleCategorySelect();
-
-/***/ }),
-
 /***/ 779:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
@@ -626,12 +340,298 @@ module.exports = function (urlString) {
 // extracted by mini-css-extract-plugin
 
     if(true) {
-      // 1655121954738
+      // 1655121961950
       var cssReload = __webpack_require__(779)(module.id, {"locals":false});
       module.hot.dispose(cssReload);
       module.hot.accept(undefined, cssReload);
     }
   
+
+/***/ }),
+
+/***/ 579:
+/***/ (function(__unused_webpack_module, __unused_webpack___webpack_exports__, __webpack_require__) {
+
+/* harmony import */ var _styles_style_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(775);
+
+
+function handleToggleNav() {
+  var menuIcon = document.querySelector('.header-nav-icon');
+  var headerNav = document.querySelector('.header-nav');
+  var headerContainer = document.querySelector('.header__container');
+  var select = document.querySelector('.language-select');
+  var headerLogo = document.querySelector('.header__logo');
+  var liLang = document.querySelector('.menu-item--lang');
+  var body = document.querySelector('body');
+  menuIcon.addEventListener('click', function () {
+    headerNav.classList.toggle('header-nav-active');
+    headerContainer.classList.toggle('header-nav-active');
+    menuIcon.classList.toggle('menu-close');
+    headerNav.className === 'header-nav header-nav-active' ? (headerLogo.appendChild(select), body.style.overflow = 'hidden') : (liLang.appendChild(select), body.style.overflow = 'scroll');
+  });
+}
+
+function handleIncreaseInput() {
+  var inputItem = document.getElementById('search-input');
+  var buttons = document.querySelector('.categories-section__items-buttons');
+  inputItem.addEventListener('focus', function (event) {
+    inputItem.classList.add('active');
+    buttons.style.display = 'none';
+  });
+  inputItem.addEventListener('blur', function (event) {
+    if (!inputItem.value.length) {
+      inputItem.classList.remove('active');
+      buttons.style.display = 'flex';
+    }
+  });
+}
+
+function handleCategorySelect() {
+  var selectSingle = document.querySelector('.category-select');
+  var selectSingle_title = selectSingle.querySelector('.category-select__title');
+  var selectSingle_labels = selectSingle.querySelectorAll('.category-select__label');
+  selectSingle_title.addEventListener('click', function () {
+    if ('active' === selectSingle.getAttribute('data-state')) {
+      selectSingle.setAttribute('data-state', '');
+    } else {
+      selectSingle.setAttribute('data-state', 'active');
+    }
+  });
+
+  for (var i = 0; i < selectSingle_labels.length; i++) {
+    selectSingle_labels[i].addEventListener('click', function (evt) {
+      selectSingle_title.textContent = evt.target.textContent;
+      selectSingle.setAttribute('data-state', '');
+    });
+  }
+}
+
+;
+(function ($) {
+  $('.language-select').click(function () {
+    $(this).toggleClass('open');
+    var li = document.querySelectorAll('.option');
+    var arr = Array.from(li);
+
+    for (var i = 0; i < arr.length; i += 1) {
+      var es = document.querySelector('[data-lang="es"]');
+      var en = document.querySelector('[data-lang="en"]');
+
+      if (arr[i].dataset.lang === 'da' && arr[i].className === 'active option lang--da') {
+        es.classList.add('option-1');
+        en.classList.add('option-2');
+      }
+    }
+  });
+  $('.language-select li').click(function () {
+    var setLang = $('.language-select').data('location'),
+        dataLangSelect = $(this).data('lang');
+    $('.language-select').data('location', dataLangSelect);
+    $('.language-select li').removeClass('active');
+    $(this).toggleClass('active');
+    var li = document.querySelectorAll('.option');
+    var arr = Array.from(li);
+
+    for (var i = 0; i < arr.length; i += 1) {
+      var da = document.querySelector('[data-lang="da"]');
+      var es = document.querySelector('[data-lang="es"]');
+      var en = document.querySelector('[data-lang="en"]');
+
+      if (arr[i].dataset.lang === 'da' && arr[i].className === 'option lang--da option-1 active') {
+        es.classList.remove('option-2');
+        es.classList.add('option-1');
+        en.classList.add('option-2');
+      }
+
+      if (arr[i].dataset.lang === 'es' && arr[i].className === 'option lang--es option-1 active') {
+        da.classList.add('option-1');
+        en.classList.add('option-2');
+      }
+
+      if (arr[i].dataset.lang === 'en' && arr[i].className === 'option lang--en option-2 active') {
+        da.classList.add('option-1');
+        es.classList.remove('option-1');
+        es.classList.add('option-2');
+      }
+    }
+  });
+})(jQuery)(function ($) {
+  $("a[href='#top']").click(function () {
+    $('html, body').animate({
+      scrollTop: 0
+    }, 'slow');
+    return false;
+  });
+})(jQuery);
+
+function showSlider() {
+  var slider = document.querySelector('.slider'),
+      sliderList = slider.querySelector('.slider-list'),
+      sliderTrack = slider.querySelector('.slider-track'),
+      slides = slider.querySelectorAll('.slide'),
+      arrows = slider.querySelector('.slider-arrows'),
+      prev = arrows.children[0],
+      next = arrows.children[1],
+      slideWidth = slides[0].offsetWidth,
+      slideIndex = 0,
+      posInit = 0,
+      posX1 = 0,
+      posX2 = 0,
+      posY1 = 0,
+      posY2 = 0,
+      posFinal = 0,
+      isSwipe = false,
+      isScroll = false,
+      allowSwipe = true,
+      transition = true,
+      nextTrf = 0,
+      prevTrf = 0,
+      posThreshold = slides[0].offsetWidth * 0.35,
+      trfRegExp = /([-\d.]+(?=px))/,
+      swipeStartTime,
+      swipeEndTime,
+      getEvent = function getEvent() {
+    return event.type.search('touch') !== -1 ? event.touches[0] : event;
+  },
+      slide = function slide() {
+    if (transition) {
+      sliderTrack.style.transition = 'transform .5s';
+    }
+
+    sliderTrack.style.transform = "translate3d(-".concat(slideIndex * slideWidth, "px, 0px, 0px)");
+    prev.classList.toggle('disabled', slideIndex === 0);
+    next.classList.toggle('disabled', slideIndex === --slides.length);
+  },
+      swipeStart = function swipeStart() {
+    var evt = getEvent();
+
+    if (allowSwipe) {
+      swipeStartTime = Date.now();
+      transition = true;
+      nextTrf = (slideIndex + 1) * -slideWidth;
+      prevTrf = (slideIndex - 1) * -slideWidth;
+      posInit = posX1 = evt.clientX;
+      posY1 = evt.clientY;
+      sliderTrack.style.transition = '';
+      document.addEventListener('touchmove', swipeAction);
+      document.addEventListener('mousemove', swipeAction);
+      document.addEventListener('touchend', swipeEnd);
+      document.addEventListener('mouseup', swipeEnd);
+      sliderList.classList.remove('grab');
+      sliderList.classList.add('grabbing');
+    }
+  },
+      swipeAction = function swipeAction() {
+    var evt = getEvent(),
+        style = sliderTrack.style.transform,
+        transform = +style.match(trfRegExp)[0];
+    posX2 = posX1 - evt.clientX;
+    posX1 = evt.clientX;
+    posY2 = posY1 - evt.clientY;
+    posY1 = evt.clientY;
+
+    if (!isSwipe && !isScroll) {
+      var posY = Math.abs(posY2);
+
+      if (posY > 7 || posX2 === 0) {
+        isScroll = true;
+        allowSwipe = false;
+      } else if (posY < 7) {
+        isSwipe = true;
+      }
+    }
+
+    if (isSwipe) {
+      if (slideIndex === 0) {
+        if (posInit < posX1) {
+          setTransform(transform, 0);
+          return;
+        } else {
+          allowSwipe = true;
+        }
+      }
+
+      if (posInit > posX1 && transform < nextTrf || posInit < posX1 && transform > prevTrf) {
+        reachEdge();
+        return;
+      }
+
+      sliderTrack.style.transform = "translate3d(".concat(transform - posX2, "px, 0px, 0px)");
+    }
+  },
+      swipeEnd = function swipeEnd() {
+    posFinal = posInit - posX1;
+    isScroll = false;
+    isSwipe = false;
+    document.removeEventListener('touchmove', swipeAction);
+    document.removeEventListener('mousemove', swipeAction);
+    document.removeEventListener('touchend', swipeEnd);
+    document.removeEventListener('mouseup', swipeEnd);
+    sliderList.classList.add('grab');
+    sliderList.classList.remove('grabbing');
+
+    if (allowSwipe) {
+      swipeEndTime = Date.now();
+
+      if (Math.abs(posFinal) > posThreshold || swipeEndTime - swipeStartTime < 300) {
+        if (posInit < posX1) {
+          slideIndex--;
+        } else if (posInit > posX1) {
+          slideIndex++;
+        }
+      }
+
+      if (posInit !== posX1) {
+        allowSwipe = false;
+        slide();
+      } else {
+        allowSwipe = true;
+      }
+    } else {
+      allowSwipe = true;
+    }
+  },
+      setTransform = function setTransform(transform, comapreTransform) {
+    if (transform >= comapreTransform) {
+      if (transform > comapreTransform) {
+        sliderTrack.style.transform = "translate3d(".concat(comapreTransform, "px, 0px, 0px)");
+      }
+    }
+
+    allowSwipe = false;
+  },
+      reachEdge = function reachEdge() {
+    transition = false;
+    swipeEnd();
+    allowSwipe = true;
+  };
+
+  sliderTrack.style.transform = 'translate3d(0px, 0px, 0px)';
+  sliderList.classList.add('grab');
+  sliderTrack.addEventListener('transitionend', function () {
+    return allowSwipe = true;
+  });
+  slider.addEventListener('touchstart', swipeStart);
+  slider.addEventListener('mousedown', swipeStart);
+  arrows.addEventListener('click', function () {
+    var target = event.target;
+
+    if (target.classList.contains('next')) {
+      slideIndex++;
+    } else if (target.classList.contains('prev')) {
+      slideIndex--;
+    } else {
+      return;
+    }
+
+    slide();
+  });
+}
+
+showSlider();
+handleToggleNav();
+handleIncreaseInput();
+handleCategorySelect();
 
 /***/ })
 
@@ -705,7 +705,7 @@ module.exports = function (urlString) {
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	!function() {
-/******/ 		__webpack_require__.h = function() { return "0a8094b75cab6949a968"; }
+/******/ 		__webpack_require__.h = function() { return "78008806bb046a35b714"; }
 /******/ 	}();
 /******/ 	
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
@@ -1765,7 +1765,7 @@ module.exports = function (urlString) {
 /******/ 	// module cache are used so entry inlining is disabled
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
-/******/ 	var __webpack_exports__ = __webpack_require__(586);
+/******/ 	var __webpack_exports__ = __webpack_require__(579);
 /******/ 	
 /******/ })()
 ;

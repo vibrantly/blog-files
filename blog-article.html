@@ -7,7 +7,9 @@
     <meta name="robots" content="index, follow">
     <meta name="copyright" content="company">
     <meta name="keywords" content="">
-    <title>Blog article</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css">
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <title>Blog article page</title>
   <script defer="defer" src="index.js"></script><link href="index.css" rel="stylesheet"></head>
 
   <body>
@@ -17,7 +19,7 @@
           <div class="col col--no-gutter header__container">
             <div class="header__logo">
               <a href="#" class="header__logo-img">
-                <img src="./assets/images/icon-logo.svg">
+                <img src="./assets/images/icon-logo.svg" alt="logo vibrant" width="100" height="24">
               </a>
             </div>
             <nav class="header-nav" id="header-nav">
@@ -40,14 +42,14 @@
               <div class="menu-item--lang">
                 <div class="language-select" id="languageSelect">
                   <a href="#" class="option">
-                    <img src="./assets/images/icon-da.svg" alt="">
+                    <img src="./assets/images/icon-da.svg" alt="flag da" width="24" height="16">
                   </a>
                   <div class="options-container" id="optionsContainer">
                     <a href="#" class="option">
-                      <img src="./assets/images/icon-es.svg" alt="">
+                      <img src="./assets/images/icon-es.svg" alt="flag es" width="24" height="16">
                     </a>
                     <a href="#" class="option">
-                      <img src="./assets/images/icon-en.svg" alt="">
+                      <img src="./assets/images/icon-en.svg" alt="flag en" width="24" height="16">
                     </a>
                   </div>
                 </div>
@@ -60,26 +62,25 @@
               </button>
             </div>
           </div>
-          <!-- /.col col--no-gutter header__container header 1440px -->
           <div class="col col--no-gutter header__container--tablet">
             <div class="header__container--tablet-wrap">
               <div class="header__logo">
                 <a href="#" class="header__logo-img">
-                  <img src="./assets/images/icon-logo.svg">
+                  <img src="./assets/images/icon-logo.svg" alt="logo vibrant" width="100" height="24">
                 </a>
               </div>
               <div class="header__controls">
                 <div class="menu-item--lang">
                   <div class="language-select" id="languageSelectTablet">
                     <a href="#" class="option">
-                      <img src="./assets/images/icon-da.svg" alt="">
+                      <img src="./assets/images/icon-da.svg" alt="flag da" width="24" height="16">
                     </a>
                     <div class="options-container" id="optionsContainerTablet">
                       <a href="#" class="option">
-                        <img src="./assets/images/icon-es.svg" alt="">
+                        <img src="./assets/images/icon-es.svg" alt="flag es" width="24" height="16">
                       </a>
                       <a href="#" class="option">
-                        <img src="./assets/images/icon-en.svg" alt="">
+                        <img src="./assets/images/icon-en.svg" alt="flag en" width="24" height="16">
                       </a>
                     </div>
                   </div>
@@ -116,23 +117,22 @@
               </ul>
             </nav>
           </div>
-          <!-- /.col col--no-gutter header__container--tablet 1024px-->
           <div class="col col--no-gutter header__container--mobile">
             <div class="header__container--mobile-wrap">
               <div class="header__logo" id="headerLogoMobile">
                 <a href="#" class="header__logo-img">
-                  <img src="./assets/images/icon-logo.svg">
+                  <img src="./assets/images/icon-logo.svg" alt="logo vibrant" width="100" height="24">
                 </a>
                 <div class="language-select" id="languageSelectMobile">
                   <a href="#" class="option">
-                    <img src="./assets/images/icon-da.svg" alt="">
+                    <img src="./assets/images/icon-da.svg" alt="flag da" width="24" height="16">
                   </a>
                   <div class="options-container" id="optionsContainerMobile">
                     <a href="#" class="option">
-                      <img src="./assets/images/icon-es.svg" alt="">
+                      <img src="./assets/images/icon-es.svg" alt="flag es" width="24" height="16">
                     </a>
                     <a href="#" class="option">
-                      <img src="./assets/images/icon-en.svg" alt="">
+                      <img src="./assets/images/icon-en.svg" alt="flag en" width="24" height="16">
                     </a>
                   </div>
                 </div>
@@ -171,13 +171,9 @@
               </div>
             </nav>
           </div>
-          <!-- /.col col--no-gutter header__container--mobile 375px-->
         </div>
-        <!-- /.row -->
       </div>
-      <!-- /.container -->
     </header>
-    <!-- /.header -->
     <main>
       <section class="breadcrumb-section">
         <div class="container">
@@ -188,17 +184,12 @@
               <p class="article article--md">Setting up</p>
             </div>
           </div>
-          <!-- /.row -->
         </div>
-        <!-- /.container -->
       </section>
-      <!-- /.breadcrumb-section -->
       <section class="heading-section--article">
-        <h2 class="title title--h2">
-          Hvorfor bruge dyre<br>
-          terminaler, når du kan <br>
-          bruge din telefon?
-        </h2>
+        <div class="title title--h2">
+          Hvorfor bruge dyre terminaler, når du kan bruge din telefon?
+        </div>
         <p class="article article--xl heading-section--article__desc">
           Med Vibrant kan du tage imod betalinger via din telefon og bruge
           <br>
@@ -213,7 +204,7 @@
           </div>
           <div class="heading-section--article__author-content">
             <div class="heading-section--article__author-content--image">
-              <img src="./assets/images/icon-author.jpg" alt="">
+              <img src="./assets/images/icon-author.jpg" alt="author image">
             </div>
             <p class="article--details heading-section--article__author-content--name">
               by Lucia Gianna Basic
@@ -221,7 +212,6 @@
           </div>
         </div>
       </section>
-      <!-- /.heading-section--article -->
       <section class="blog-item-section">
         <div class="container">
           <div class="row">
@@ -321,7 +311,7 @@
               <div class="blog-item-section__decoration"></div>
               <div class="blog-item-section__content-author">
                 <div class="blog-item-section__content-author-img">
-                  <img src="./assets/images/icon-author-big.jpg" alt="">
+                  <img src="./assets/images/icon-author-big.jpg" alt="image author">
                 </div>
                 <div class="blog-item-section__content-author-desc">
                   <p class="article article--lg">
@@ -339,7 +329,6 @@
           </div>
         </div>
       </section>
-      <!-- /.blog-item-section -->
       <section class="related-articles-section">
         <div class="related-articles-section__container">
           <div class="related-articles-section__col">
@@ -353,10 +342,10 @@
             </button>
           </div>
           <div class="related-articles-section__col">
-            <div class="articles-section__item">
+            <a href="#" class="btn-category">Setting up</a>
+            <a href="#" class="articles-section__item">
               <div class="articles-section__img">
-                <a href="#" class="btn-category">Setting up</a>
-                <img src="./assets/images/article-1.jpg" alt="">
+                <img src="./assets/images/article-1.jpg" srcset="./assets/images/article-1.jpg, ./assets/images/article-1@2x.jpg 2x" alt="article img">
               </div>
               <h5 class="title title--h5">
                 Understand your Dinero<br>
@@ -367,13 +356,13 @@
                 <span class="blog-article__icon"><img src="./assets/images/icon-union.svg" alt="union"></span>
                 <p class="article article--sm">02. May 2022</p>
               </div>
-            </div>
+            </a>
           </div>
           <div class="related-articles-section__col">
-            <div class="articles-section__item">
+            <a href="#" class="btn-category">Our company</a>
+            <a href="#" class="articles-section__item">
               <div class="articles-section__img">
-                <a href="#" class="btn-category">Our company</a>
-                <img src="./assets/images/article-3.jpg" alt="">
+                <img src="./assets/images/article-3.jpg" srcset="./assets/images/article-3.jpg, ./assets/images/article-3@2x.jpg 2x" alt="article img">
               </div>
               <h5 class="title title--h5">
                 We've officially released our new<br>
@@ -384,60 +373,55 @@
                 <span class="blog-article__icon"><img src="./assets/images/icon-union.svg" alt="union"></span>
                 <p class="article article--sm">02. May 2022</p>
               </div>
-            </div>
+            </a>
           </div>
-          <div class="slider">
-            <div class="slider-list">
-              <div class="slider-track">
-                <div class="slide">
-                  <div class="feature-section__col">
-                    <div class="feature-section__img--slider">
-                      <img src="./assets/images/dinero-slider-img.jpg" alt="">
-                    </div>
-                    <p class="article article--xl">
-                      Understand your Dinero integration in less than 4 minutes
-                    </p>
-                    <div class="articles-section--author">
-                      <p class="article article--sm">Karmen Raamat</p>
-                      <span class="blog-article__icon"><img src="./assets/images/icon-union.svg" alt="union"></span>
-                      <p class="article article--sm">02. May 2022</p>
-                    </div>
+          <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="feature-section__col">
+                  <div class="feature-section__img--slider">
+                    <img src="./assets/images/dinero-slider-img.jpg" srcset="./assets/images/dinero-slider-img.jpg, ./assets/images/dinero-slider-img@2x.jpg 2x" alt="dinero">
                   </div>
-                </div>
-                <div class="slide">
-                  <div class="feature-section__col">
-                    <div class="feature-section__img--slider">
-                      <img src="./assets/images/dinero-slider-img.jpg" alt="">
-                    </div>
-                    <p class="article article--xl">
-                      You can now add products in your terminal
-                    </p>
-                    <p class="article article--sm">4 min. read</p>
-                  </div>
-                </div>
-                <div class="slide">
-                  <div class="feature-section__col">
-                    <div class="feature-section__img--slider">
-                      <img src="./assets/images/dinero-slider-img.jpg" alt="">
-                    </div>
-                    <p class="article article--xl">
-                      New stats view! Understand your day better than ever
-                    </p>
-                    <p class="article article--sm">4 min. read</p>
+                  <p class="article article--xl">
+                    Understand your Dinero integration in less than 4 minutes
+                  </p>
+                  <div class="articles-section--author">
+                    <p class="article article--sm">Karmen Raamat</p>
+                    <span class="blog-article__icon"><img src="./assets/images/icon-union.svg" alt="union"></span>
+                    <p class="article article--sm">02. May 2022</p>
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="slider-arrows">
-              <div class="prev disabled">&larr;</div>
-              <div class="next">&rarr;</div>
+              <div class="swiper-slide">
+                <div class="feature-section__col">
+                  <div class="feature-section__img--slider">
+                    <img src="./assets/images/dinero-slider-img.jpg" srcset="./assets/images/dinero-slider-img.jpg, ./assets/images/dinero-slider-img@2x.jpg 2x" alt="dinero">
+                  </div>
+                  <p class="article article--xl">
+                    You can now add products in your terminal
+                  </p>
+                  <p class="article article--sm">4 min. read</p>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="feature-section__col">
+                  <div class="feature-section__img--slider">
+                    <img src="./assets/images/dinero-slider-img.jpg" srcset="./assets/images/dinero-slider-img.jpg, ./assets/images/dinero-slider-img@2x.jpg 2x" alt="dinero">
+                  </div>
+                  <p class="article article--xl">
+                    New stats view! Understand your day better than ever
+                  </p>
+                  <p class="article article--sm">4 min. read</p>
+                </div>
+              </div>
             </div>
           </div>
-          <!-- /.slider -->
+          <div class="swiper-arrows">
+            <div class="swiper-button-next swiper-btn">&rarr;</div>
+            <div class="swiper-button-prev swiper-btn">&larr;</div>
+          </div>
         </div>
-        <!-- /.related-articles-section__container -->
       </section>
-      <!-- /.related-articles-section -->
       <section class="cta-section-simple">
         <div class="container">
           <div class="row">
@@ -453,22 +437,17 @@
                 <button class="btn btn--outlined">Contact sales</button>
               </div>
             </div>
-            <!-- /.cta-section--simple__container -->
           </div>
-          <!-- .row -->
         </div>
-        <!-- /.container -->
       </section>
-      <!-- /.cta-section--shapes -->
     </main>
     <footer class="footer">
-      <!-- <div> -->
       <div class="container">
         <div class="row footer-content">
           <div class="col col-4">
             <div class="footer__logo">
               <a href="#" class="footer__logo-img">
-                <img src="./assets/images/icon-logo-footer.svg">
+                <img src="./assets/images/icon-logo-footer.svg" alt="logo vibrant" width="48" height="48">
               </a>
             </div>
           </div>
@@ -503,11 +482,9 @@
                   <a href="#" class="footer-nav__item">LinkedIn</a>
                 </div>
               </nav>
-              <!-- /.footer-nav -->
             </div>
           </div>
         </div>
-        <!-- /.row -->
         <div class="row footer-info">
           <div class="col col--no-gutter col-6 col-sm-12">
             <div class="article article--sm footer-info__container footer-info__container-text">
@@ -518,12 +495,11 @@
                   Made possible with our friends from Visa & Mastercard
                 </div>
                 <div class="footer-info__icon">
-                  <img src="./assets/images/icon-happy.svg" alt="">
+                  <img src="./assets/images/icon-happy.svg" alt="icon happy" width="24" height="24">
                 </div>
               </div>
             </div>
           </div>
-          <!-- /.col col--no-gutter col-6 -->
           <div class="col col--no-gutter col-6 col-sm-12">
             <div class="footer-info__policy">
               <a href="#" class="footer-info__policy-item">Cookie policy</a>
@@ -531,17 +507,13 @@
               <a href="#" class="footer-info__policy-item">Merchant agreement</a>
             </div>
           </div>
-          <!-- /.col col--no-gutter col-6 -->
         </div>
-        <!-- /.row -->
       </div>
-      <!-- /.container -->
       <div class="move-to-top">
         <div class="move-to-top__image">
-          <img src="./assets/images/icon-star.svg" alt="">
+          <img src="./assets/images/icon-star.svg" alt="move to top">
         </div>
       </div>
     </footer>
-    <!-- /.footer -->
   </body>
 </html>

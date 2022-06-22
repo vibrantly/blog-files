@@ -7,6 +7,8 @@
     <meta name="robots" content="index, follow">
     <meta name="copyright" content="company">
     <meta name="keywords" content="">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css">
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
     <title>Blog page</title>
   <script defer="defer" src="index.js"></script><link href="index.css" rel="stylesheet"></head>
 
@@ -17,7 +19,7 @@
           <div class="col col--no-gutter header__container">
             <div class="header__logo">
               <a href="#" class="header__logo-img">
-                <img src="./assets/images/icon-logo.svg">
+                <img src="./assets/images/icon-logo.svg" alt="logo vibrant" width="100" height="24">
               </a>
             </div>
             <nav class="header-nav" id="header-nav">
@@ -40,14 +42,14 @@
               <div class="menu-item--lang">
                 <div class="language-select" id="languageSelect">
                   <a href="#" class="option">
-                    <img src="./assets/images/icon-da.svg" alt="">
+                    <img src="./assets/images/icon-da.svg" alt="flag da" width="24" height="16">
                   </a>
                   <div class="options-container" id="optionsContainer">
                     <a href="#" class="option">
-                      <img src="./assets/images/icon-es.svg" alt="">
+                      <img src="./assets/images/icon-es.svg" alt="flag es" width="24" height="16">
                     </a>
                     <a href="#" class="option">
-                      <img src="./assets/images/icon-en.svg" alt="">
+                      <img src="./assets/images/icon-en.svg" alt="flag en" width="24" height="16">
                     </a>
                   </div>
                 </div>
@@ -60,26 +62,25 @@
               </button>
             </div>
           </div>
-          <!-- /.col col--no-gutter header__container header 1440px -->
           <div class="col col--no-gutter header__container--tablet">
             <div class="header__container--tablet-wrap">
               <div class="header__logo">
                 <a href="#" class="header__logo-img">
-                  <img src="./assets/images/icon-logo.svg">
+                  <img src="./assets/images/icon-logo.svg" alt="logo vibrant" width="100" height="24">
                 </a>
               </div>
               <div class="header__controls">
                 <div class="menu-item--lang">
                   <div class="language-select" id="languageSelectTablet">
                     <a href="#" class="option">
-                      <img src="./assets/images/icon-da.svg" alt="">
+                      <img src="./assets/images/icon-da.svg" alt="flag da" width="24" height="16">
                     </a>
                     <div class="options-container" id="optionsContainerTablet">
                       <a href="#" class="option">
-                        <img src="./assets/images/icon-es.svg" alt="">
+                        <img src="./assets/images/icon-es.svg" alt="flag es" width="24" height="16">
                       </a>
                       <a href="#" class="option">
-                        <img src="./assets/images/icon-en.svg" alt="">
+                        <img src="./assets/images/icon-en.svg" alt="flag en" width="24" height="16">
                       </a>
                     </div>
                   </div>
@@ -116,23 +117,22 @@
               </ul>
             </nav>
           </div>
-          <!-- /.col col--no-gutter header__container--tablet 1024px-->
           <div class="col col--no-gutter header__container--mobile">
             <div class="header__container--mobile-wrap">
               <div class="header__logo" id="headerLogoMobile">
                 <a href="#" class="header__logo-img">
-                  <img src="./assets/images/icon-logo.svg">
+                  <img src="./assets/images/icon-logo.svg" alt="logo vibrant" width="100" height="24">
                 </a>
                 <div class="language-select" id="languageSelectMobile">
                   <a href="#" class="option">
-                    <img src="./assets/images/icon-da.svg" alt="">
+                    <img src="./assets/images/icon-da.svg" alt="flag da" width="24" height="16">
                   </a>
                   <div class="options-container" id="optionsContainerMobile">
                     <a href="#" class="option">
-                      <img src="./assets/images/icon-es.svg" alt="">
+                      <img src="./assets/images/icon-es.svg" alt="flag es" width="24" height="16">
                     </a>
                     <a href="#" class="option">
-                      <img src="./assets/images/icon-en.svg" alt="">
+                      <img src="./assets/images/icon-en.svg" alt="flag en" width="24" height="16">
                     </a>
                   </div>
                 </div>
@@ -145,7 +145,6 @@
                 </div>
               </div>
             </div>
-            <!-- </div> -->
             <nav class="header-nav" id="header-nav--mobile">
               <ul class="menu">
                 <li class="menu-item">
@@ -171,29 +170,22 @@
               </div>
             </nav>
           </div>
-          <!-- /.col col--no-gutter header__container--mobile 375px-->
         </div>
-        <!-- /.row -->
       </div>
-      <!-- /.container -->
     </header>
-    <!-- /.header -->
     <main class="main">
       <section class="heading-section">
         <div class="container">
           <div class="row">
             <div class="col col--no-gutter">
               <div class="heading-section__container">
-                <h1 class="title title--h1">
-                  Everything going on in<br>
-                  Vibrant.<mark class="heading-section__title--mark">
-                    Right here.</mark>
-                </h1>
+                <h2 class="title title--h2">
+                  Everything going on in Vibrant.<mark>Right here.</mark>
+                </h2>
               </div>
             </div>
           </div>
         </div>
-        <!-- /.container -->
       </section>
       <section class="categories-section">
         <div class="container">
@@ -201,7 +193,7 @@
             <div class="col col--no-gutter">
               <div class="categories-section__items">
                 <div class="categories-section__items-buttons">
-                  <a href="#" class="btn--blog">All news</a>
+                  <a href="#" class="btn--blog active-category">All news</a>
                   <a href="#" class="btn--blog">Product</a>
                   <a href="#" class="btn--blog">Our company</a>
                   <a href="#" class="btn--blog">Entrepreneurship</a>
@@ -221,7 +213,6 @@
                       <label for="integrationsOption" tabindex="0" class="category-select__label" data-value="Integrations"></label>
                     </div>
                   </div>
-                  <!-- category-select -->
                   <div class="input--search" id="searchInput">
                     <input type="search" class="categories-section__input">
                   </div>
@@ -231,7 +222,7 @@
                 <a class="all-news-sections__item">
                   <div class="all-news-sections__item-img">
                     <div class="btn-category">Setting up</div>
-                    <img src="./assets/images/all-news.jpg">
+                    <img src="./assets/images/all-news.jpg" srcset="./assets/images/all-news.jpg, ./assets/images/all-news@2x.jpg 2x" alt="setting up image">
                   </div>
                   <h4 class="title title--h4 all-news-sections__item-title">
                     Hvorfor bruge dyre terminaler, når du kan bruge din telefon?
@@ -303,11 +294,8 @@
               </div>
             </div>
           </div>
-          <!-- /.row -->
         </div>
-        <!-- /.container -->
       </section>
-      <!-- /.categories-section -->
       <section class="feature-section">
         <div class="feature-section__container">
           <div class="feature-section__col">
@@ -319,97 +307,90 @@
               See all updates
             </button>
           </div>
-          <!-- /.feature-section__col -->
           <a href="#" class="feature-section__col">
             <div class="feature-section__img">
-              <img src="./assets/images/release-app.jpg" alt="">
+              <img src="./assets/images/release-app.jpg" srcset="./assets/images/release-app.jpg, ./assets/images/release-app@2x.jpg 2x" alt="release-app">
             </div>
             <p class="article article--lg">
               We've officially released our new app!
             </p>
             <p class="article article--sm">4 min. read</p>
           </a>
-          <!-- /.feature-section__col -->
           <a href="#" class="feature-section__col">
             <div class="feature-section__img">
-              <img src="./assets/images/terminal.jpg" alt="">
+              <img src="./assets/images/terminal.jpg" srcset="./assets/images/terminal.jpg, ./assets/images/terminal@2x.jpg 2x" alt="terminal">
             </div>
             <p class="article article--lg">
               You can now add products in your terminal
             </p>
             <p class="article article--sm">4 min. read</p>
           </a>
-          <!-- /.feature-section__col -->
           <a href="#" class="feature-section__col">
             <div class="feature-section__img">
-              <img src="./assets/images/stats.jpg" alt="">
+              <img src="./assets/images/stats.jpg" srcset="./assets/images/stats.jpg, ./assets/images/stats@2x.jpg 2x" alt="stats">
             </div>
             <p class="article article--lg">
               New stats view! Understand your day better than ever
             </p>
             <p class="article article--sm">4 min. read</p>
           </a>
-          <!-- /.feature-section__col -->
-          <div class="slider">
-            <div class="slider-list">
-              <div class="slider-track">
-                <div class="slide">
-                  <div class="feature-section__col">
-                    <div class="feature-section__img--slider">
-                      <img src="./assets/images/dinero-slider-img.jpg" alt="">
-                    </div>
-                    <p class="article article--xl">
-                      Understand your Dinero integration in less than 4 minutes
-                    </p>
-                    <div class="articles-section--author">
-                      <p class="article article--sm">Karmen Raamat</p>
-                      <span class="blog-article__icon"><img src="./assets/images/icon-union.svg" alt="union"></span>
-                      <p class="article article--sm">02. May 2022</p>
-                    </div>
+          <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="feature-section__col">
+                  <div class="feature-section__img--slider">
+                    <img src="./assets/images/dinero-slider-img.jpg" srcset="./assets/images/dinero-slider-img.jpg, ./assets/images/dinero-slider-img@2x.jpg 2x" alt="dinero">
                   </div>
-                </div>
-                <div class="slide">
-                  <div class="feature-section__col">
-                    <div class="feature-section__img--slider">
-                      <img src="./assets/images/dinero-slider-img.jpg" alt="">
-                    </div>
-                    <p class="article article--xl">
-                      You can now add products in your terminal
-                    </p>
-                    <p class="article article--sm">4 min. read</p>
-                  </div>
-                </div>
-                <div class="slide">
-                  <div class="feature-section__col">
-                    <div class="feature-section__img--slider">
-                      <img src="./assets/images/dinero-slider-img.jpg" alt="">
-                    </div>
-                    <p class="article article--xl">
-                      New stats view! Understand your day better than ever
-                    </p>
-                    <p class="article article--sm">4 min. read</p>
+                  <p class="article article--xl">
+                    Understand your Dinero integration in less than 4 minutes
+                  </p>
+                  <div class="articles-section--author">
+                    <p class="article article--sm">Karmen Raamat</p>
+                    <span class="blog-article__icon"><img src="./assets/images/icon-union.svg" alt="union"></span>
+                    <p class="article article--sm">02. May 2022</p>
                   </div>
                 </div>
               </div>
+              <div class="swiper-slide">
+                <div class="feature-section__col">
+                  <div class="feature-section__img--slider">
+                    <img src="./assets/images/dinero-slider-img.jpg" srcset="./assets/images/dinero-slider-img.jpg, ./assets/images/dinero-slider-img@2x.jpg 2x" alt="dinero">
+                  </div>
+                  <p class="article article--xl">
+                    You can now add products in your terminal
+                  </p>
+                  <p class="article article--sm">4 min. read</p>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="feature-section__col">
+                  <div class="feature-section__img--slider">
+                    <img src="./assets/images/dinero-slider-img.jpg" srcset="./assets/images/dinero-slider-img.jpg, ./assets/images/dinero-slider-img@2x.jpg 2x" alt="dinero">
+                  </div>
+                  <p class="article article--xl">
+                    New stats view! Understand your day better than ever
+                  </p>
+                  <p class="article article--sm">4 min. read</p>
+                </div>
+              </div>
             </div>
-            <div class="slider-arrows">
-              <div class="prev disabled">&larr;</div>
-              <div class="next">&rarr;</div>
-            </div>
+          </div>
+          <div class="swiper-arrows">
+            <div class="swiper-button-next swiper-btn">&rarr;</div>
+            <div class="swiper-button-prev swiper-btn">&larr;</div>
           </div>
         </div>
       </section>
-      <!-- /.feature-section -->
       <section class="articles-section">
         <div class="container">
           <h3 class="title title--h3">Other articles</h3>
           <div class="row">
             <div class="articles-section__container">
               <div class="articles-section__col">
+                <a href="#" class="btn-category">Setting up</a>
                 <a href="#" class="articles-section__item">
                   <div class="articles-section__img">
-                    <div class="btn-category">Setting up</div>
-                    <img src="./assets/images/article-1.jpg" alt="">
+                    <img src="./assets/images/article-1.jpg" srcset="./assets/images/article-1.jpg, ./assets/images/article-1@2x.jpg 2x" alt="article img">
                   </div>
                   <h5 class="title title--h5">
                     Understand your Dinero<br>
@@ -422,12 +403,11 @@
                   </div>
                 </a>
               </div>
-              <!-- /.articles-section__col -->
               <div class="articles-section__col">
+                <a href="#" class="btn-category">Start your business</a>
                 <a href="#" class="articles-section__item">
                   <div class="articles-section__img">
-                    <div class="btn-category">Start your business</div>
-                    <img src="./assets/images/article-2.jpg" alt="">
+                    <img src="./assets/images/article-2.jpg" srcset="./assets/images/article-2.jpg, ./assets/images/article-2@2x.jpg 2x" alt="article img">
                   </div>
                   <h5 class="title title--h5">
                     You can now add products in<br>
@@ -440,12 +420,11 @@
                   </div>
                 </a>
               </div>
-              <!-- /.articles-section__col -->
               <div class="articles-section__col">
+                <a href="#" class="btn-category">Our company</a>
                 <a href="#" class="articles-section__item">
                   <div class="articles-section__img">
-                    <div class="btn-category">Our company</div>
-                    <img src="./assets/images/article-3.jpg" alt="">
+                    <img src="./assets/images/article-3.jpg" srcset="./assets/images/article-3.jpg, ./assets/images/article-3@2x.jpg 2x" alt="article img">
                   </div>
                   <h5 class="title title--h5">
                     We've officially released our new<br>
@@ -458,12 +437,11 @@
                   </div>
                 </a>
               </div>
-              <!-- /.articles-section__col -->
               <div class="articles-section__col">
+                <a href="#" class="btn-category">Fintech</a>
                 <a href="#" class="articles-section__item">
                   <div class="articles-section__img">
-                    <div class="btn-category">Fintech</div>
-                    <img src="./assets/images/article-4.jpg" alt="">
+                    <img src="./assets/images/article-4.jpg" srcset="./assets/images/article-4.jpg, ./assets/images/article-4@2x.jpg 2x" alt="article img">
                   </div>
                   <h5 class="title title--h5">
                     Hello world - we're live with<br>
@@ -476,30 +454,28 @@
                   </div>
                 </a>
               </div>
-              <!-- /.articles-section__col -->
-              <a href="#" class="articles-section__col articles-section__col--no-cover">
-                <div class="btn-category btn-category--no-cover">
-                  Setting up
-                </div>
-                <div class="articles-section__col--no-cover-title">
-                  <h4 class="title title--h4">
-                    New stats view!<br>
-                    Understand your<br>
-                    day better than ever
-                  </h4>
-                </div>
-                <div class="articles-section--author">
-                  <p class="article article--sm">Karmen Raamat</p>
-                  <span class="blog-article__icon"><img src="./assets/images/icon-union.svg" alt="union"></span>
-                  <p class="article article--sm">2 min. read</p>
-                </div>
-              </a>
-              <!-- /.articles-section__col--no-cover -->
+              <div class="articles-section__col articles-section__col--no-cover">
+                <a href="#" class="btn-category btn-category--no-cover">Setting up</a>
+                <a href="#" class="articles-section__col--no-cover-item">
+                  <div class="articles-section__col--no-cover-title">
+                    <h4 class="title title--h4">
+                      New stats view!<br>
+                      Understand your<br>
+                      day better than ever
+                    </h4>
+                  </div>
+                  <div class="articles-section--author">
+                    <p class="article article--sm">Karmen Raamat</p>
+                    <span class="blog-article__icon"><img src="./assets/images/icon-union.svg" alt="union"></span>
+                    <p class="article article--sm">2 min. read</p>
+                  </div>
+                </a>
+              </div>
               <div class="articles-section__col">
+                <a href="#" class="btn-category">The app</a>
                 <a href="#" class="articles-section__item">
                   <div class="articles-section__img">
-                    <div class="btn-category">The app</div>
-                    <img src="./assets/images/article-5.jpg" alt="">
+                    <img src="./assets/images/article-6.jpg" srcset="./assets/images/article-6.jpg, ./assets/images/article-6@2x.jpg 2x" alt="article img">
                   </div>
                   <h5 class="title title--h5">
                     The definitive guide to setting up<br>
@@ -512,18 +488,13 @@
                   </div>
                 </a>
               </div>
-              <!-- /.articles-section__col -->
             </div>
-            <!-- /.articles-section__container -->
           </div>
-          <!-- /.row -->
           <div class="articles-section__more">
             <button class="btn btn--underlined">Show more</button>
           </div>
         </div>
-        <!-- /.container -->
       </section>
-      <!-- /.articles-section -->
       <section class="cta-section-shapes">
         <div class="container">
           <div class="row">
@@ -539,23 +510,17 @@
                 <button class="btn btn--outlined">Contact sales</button>
               </div>
             </div>
-            <!-- /.cta-section--shapes__container -->
           </div>
-          <!-- .row -->
         </div>
-        <!-- /.container -->
       </section>
-      <!-- /.cta-section--shapes -->
     </main>
-    <!-- /.main -->
     <footer class="footer">
-      <!-- <div> -->
       <div class="container">
         <div class="row footer-content">
           <div class="col col-4">
             <div class="footer__logo">
               <a href="#" class="footer__logo-img">
-                <img src="./assets/images/icon-logo-footer.svg">
+                <img src="./assets/images/icon-logo-footer.svg" alt="logo vibrant" width="48" height="48">
               </a>
             </div>
           </div>
@@ -590,11 +555,9 @@
                   <a href="#" class="footer-nav__item">LinkedIn</a>
                 </div>
               </nav>
-              <!-- /.footer-nav -->
             </div>
           </div>
         </div>
-        <!-- /.row -->
         <div class="row footer-info">
           <div class="col col--no-gutter col-6 col-sm-12">
             <div class="article article--sm footer-info__container footer-info__container-text">
@@ -605,12 +568,11 @@
                   Made possible with our friends from Visa & Mastercard
                 </div>
                 <div class="footer-info__icon">
-                  <img src="./assets/images/icon-happy.svg" alt="">
+                  <img src="./assets/images/icon-happy.svg" alt="icon happy" width="24" height="24">
                 </div>
               </div>
             </div>
           </div>
-          <!-- /.col col--no-gutter col-6 -->
           <div class="col col--no-gutter col-6 col-sm-12">
             <div class="footer-info__policy">
               <a href="#" class="footer-info__policy-item">Cookie policy</a>
@@ -618,18 +580,13 @@
               <a href="#" class="footer-info__policy-item">Merchant agreement</a>
             </div>
           </div>
-          <!-- /.col col--no-gutter col-6 -->
         </div>
-        <!-- /.row -->
       </div>
-      <!-- /.container -->
-
       <div class="move-to-top">
         <div class="move-to-top__image">
-          <img src="./assets/images/icon-star.svg" alt="">
+          <img src="./assets/images/icon-star.svg" alt="move to top">
         </div>
       </div>
     </footer>
-    <!-- /.footer -->
   </body>
 </html>

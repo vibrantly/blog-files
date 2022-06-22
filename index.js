@@ -165,11 +165,8 @@ function showSliderFeature() {
 
 window.addEventListener('DOMContentLoaded', function () {
   handleLanguageSelect();
-  handleToggleNav(); // handleCategorySelect();
-  // handleIncreaseInput();
-
-  scrollToTop(); // showSliderCustomers();
-  // showSliderFeature();
+  handleToggleNav();
+  scrollToTop();
 });
 /******/ })()
 ;
